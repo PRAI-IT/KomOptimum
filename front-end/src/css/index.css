@@ -1,0 +1,208 @@
+@font-face {
+    font-family: Inter;
+    src: url('@/css/fonts/Inter.woff2') format('woff2'), url('@/css/fonts/Inter.ttf') format('truetype');
+}
+html{
+    background-color: #4B4AEF;
+    background-image: url('/img/mask.svg');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 80px 0;
+    font-family: 'Inter';
+}
+.container{
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+.shadowBlock{
+    background: white;
+    box-shadow: 0 4px 32px 0 rgba(61, 70, 112, 0.08);
+    border-radius: 20px;
+    padding: 25px;
+}
+.formCheck{
+    cursor: pointer;
+    color: #343A40;
+    font-size: 16px;
+    position: relative;
+    padding-left: 24px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: none;
+    outline: none;
+    box-shadow: none;
+}
+.formCheck input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    height: 16px;
+    width: 16px;
+    background-color: white;
+    border-radius: 2px;
+    transition: .1s ease-in-out;
+    border: 1px solid var(--custom_color);
+    background-image: url('/img/check.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.formCheck:hover input ~ .checkmark {
+    background-color: white;
+}
+.formCheck input:checked ~ .checkmark {
+    background-color: var(--custom_color);
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.formCheck input:checked ~ .checkmark:after {
+    display: block;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.2s ease-in-out;
+}
+.fade-enter-from, .fade-leave-to {
+    opacity: 0;
+}
+.animHeight-enter-active, .animHeight-leave-active {
+    transition: .5s ease-in-out;
+    max-height: 100px;
+    overflow: hidden;
+}
+.animHeight-enter-from, .animHeight-leave-to {
+    max-height: 0;
+    opacity: 0;
+}
+.animHeightBig-enter-active, .animHeightBig-leave-active {
+    transition: .5s ease-in-out;
+    max-height: 1000px;
+    overflow: hidden;
+}
+.animHeightBig-enter-from, .animHeightBig-leave-to {
+    max-height: 0;
+    opacity: 0;
+}
+/*скролл начало*/
+html {scrollbar-width: thin;scrollbar-color: white transparent;}
+html::-webkit-scrollbar-track {background: transparent;}
+html::-webkit-scrollbar,
+html::-webkit-scrollbar-thumb {height: 26px;border-radius: 13px;background-clip: padding-box;border: 10px solid transparent;}
+html::-webkit-scrollbar-thumb {box-shadow: inset 0 0 0 10px;}
+html::-webkit-scrollbar, html::-webkit-scrollbar, html::-webkit-scrollbar {width: 5px; height: 2px}
+html::-webkit-scrollbar-thumb, html::-webkit-scrollbar-thumb, html::-webkit-scrollbar-thumb{background: white;border-radius: 0;}
+html::-webkit-scrollbar-thumb:hover, html::-webkit-scrollbar-thumb:hover, html::-webkit-scrollbar-thumb:hover{background: white;}
+html::-webkit-scrollbar-thumb:focus, html::-webkit-scrollbar-thumb:focus, html::-webkit-scrollbar-thumb:focus{background: white;}
+/*скролл конец*/
+/*Селект с поиском начало*/
+.v-select{
+    flex: auto;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+}
+.v-select .vs__search, .v-select .vs__search:focus{
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 17px;
+    border-radius: 0;
+}
+.v-select .vs__dropdown-toggle{
+    border: 1px solid white;
+    box-shadow: none;
+    outline: none;
+    padding: 0;
+    background: white;
+    font-size: 14px;
+    line-height: 17px;
+    transition: .3s ease;
+}
+.v-select .vs__dropdown-menu{
+    border: 1px solid white;
+}
+.v-select .vs__selected{
+    font-size: 14px;
+    line-height: 14px;
+    color: black;
+    padding: 0;
+    margin: 0;
+}
+.v-select .vs__dropdown-option--selected{
+    background-color: white;
+    color: white;
+}
+.selectarrow{
+    transition: .3s ease-in-out;
+}
+.vs__dropdown-toggle[aria-expanded=true] .selectarrow{
+    transform: rotate(180deg);
+}
+/*Селект с поиском конец*/
+/*Табы начало*/
+.tabList{
+    display: flex;
+    column-gap: 10px;
+}
+.myTabSmall{
+    height: 48px;
+    line-height: 48px;
+    padding: 0 20px;
+    border-radius: 4px;
+    border: 1px solid #5570F1;
+    background: #FFF;
+    transition: .3s ease-in-out;
+    font-size: 14px;
+    font-weight: 600;
+    color: #5570F1;
+    cursor: pointer;
+}
+.myTabActiveSmall{
+    color: white;
+    background-color: #5570F1;
+}
+/*Табы конец*/
+.listCheckbox{
+    display: flex;
+    column-gap: 23px;
+    margin: 20px 0;
+}
+.btn{
+    width: 270px;
+    height: 38px;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    background: #5570F1;
+    line-height: 38px;
+    cursor: pointer;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+@media (max-width: 1100px) {
+    .container{
+        max-width: calc(100vw - 30px);
+    }
+}
